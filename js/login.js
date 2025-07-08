@@ -7,11 +7,14 @@ form.addEventListener("submit", function(e) {
 
     let users = JSON.parse(localStorage.getItem("users")) 
 
+    // check if email and password correct
     let userEmail = users.find
     (user => user.email === getUserEmail.value 
     && user.password === getUserPassword.value);
 
     if(userEmail){
+
+        // Save user details to display it in the profile page
         localStorage.setItem("currnetUser", JSON.stringify(
             {
             name: userEmail.name,
